@@ -8,7 +8,9 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+//testing
+//  Temp temp = new Temp();
+//        System.out.println(temp.tempList());
 public class Temp implements ITemp{
     @Override
     public List<String> tempList() {
@@ -20,8 +22,8 @@ public class Temp implements ITemp{
 
             Elements temps = document.select(".temp");
             for (Element t : temps) {
-                String highTemps = t.select(".high").text();
-                String lowTemps = t.select(".low").text();
+                String highTemps = t.select(".high").text().replace("°","");
+                String lowTemps = t.select(".low").text().replace("°","");
                 String combined = highTemps + lowTemps;
                 htlt.add(combined);
             }
@@ -32,3 +34,4 @@ public class Temp implements ITemp{
         return htlt;
     }
 }
+
