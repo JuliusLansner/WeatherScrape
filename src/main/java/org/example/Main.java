@@ -1,15 +1,13 @@
 package org.example;
 
 
-import org.example.Scraping.Location;
-import org.example.Scraping.Temp;
+import org.example.Scraping.Date;
+import org.example.Scraping.ScrapingTools;
+import org.jsoup.select.Elements;
+
 
 public class Main {
     public static void main(String[] args) {
-   Temp temp = new Temp();
- System.out.println(temp.tempList());
-        Location loc = new Location();
-        System.out.println(loc.locationList());
 
     }
 }
