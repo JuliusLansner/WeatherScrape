@@ -22,7 +22,7 @@ public class Description implements IDescription {
     @Override
     public List<String> descList() {
         List<String> descriptionList = new ArrayList<>();
-        Elements descriptions = GetElements.getElements(url, cssSelector);
+        Elements descriptions = ScrapingTools.getElements(url, cssSelector);
 
         descriptions.forEach(description -> {
             String text = description.text();
