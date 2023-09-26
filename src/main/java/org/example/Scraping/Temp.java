@@ -23,8 +23,8 @@ public class Temp implements ITemp{
             Elements temps = document.select(".temp");
             for (Element t : temps) {
                 String highTemps = t.select(".high").text().replace("°","");
-                String lowTemps = t.select(".low").text().replace("°","");
-                String combined = highTemps + lowTemps;
+                String lowTemps = t.select(".low").text().replace("°","").replace("/","");
+                String combined = highTemps +"/"+ lowTemps;
                 htlt.add(combined);
             }
         } catch (IOException e) {
