@@ -1,5 +1,12 @@
 package org.example.api;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 import java.io.IOException;
 
 public class weatherAPIM {
