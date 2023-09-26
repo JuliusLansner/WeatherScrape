@@ -7,17 +7,17 @@ import java.net.URL;
 import org.json.JSONObject;
 
 public class WeatherApiClient {
-    private static final String API_KEY = "0a3a70bed9265478574e462275fbbf69"; // Replace with your OpenWeatherMap API key
-
-    public static void main(String[] args) {
-        String city = "Hillerød"; // Replace with the city you want to get weather data for
+    private static final String API_KEY = "0a3a70bed9265478574e462275fbbf69";
+ // -> testing
+    /*public static void main(String[] args) {
+        String city = "Hillerød";
         try {
             String weatherData = getWeatherData(city);
             System.out.println("Weather Data:\n" + weatherData);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public static String getWeatherData(String city) throws Exception {
         // Create a URL for the API request
