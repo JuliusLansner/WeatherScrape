@@ -8,6 +8,8 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -62,11 +64,12 @@ public class ScrapingTools {
         Location location = new Location();
         Date date = new Date();
 
+        List<String> tempatures = temp.tempList();
+        List<String> descriptions = description.descList();
+        String locatione = location.locationList();
+        List<String> dates = date.dateList();
+
         for (int i = 0; i < date.dateList().size(); i++) {
-            List<String> tempatures = temp.tempList();
-            List<String> descriptions = description.descList();
-            String locatione = location.locationList();
-            List<String> dates = date.dateList();
             WeatherDTO weatherDTO = new WeatherDTO(dates.get(i), locatione, descriptions.get(i), tempatures.get(i));
             System.out.println(weatherDTO);
             DTOs.add(weatherDTO);
@@ -91,7 +94,7 @@ public class ScrapingTools {
         Thread thread2 = new Thread(() -> {
             descriptions.addAll(description.descList());
         });
-        
+
         List<String> dates = new ArrayList<>();
         Thread thread3 = new Thread(() -> {
             dates.addAll(date.dateList());
