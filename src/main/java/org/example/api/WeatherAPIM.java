@@ -9,16 +9,16 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
-public class weatherAPIM {
-    public static JsonObject getWeatherGson(String APIKey, String lat, String lon) {
+public class WeatherAPIM {
+    public static JsonObject getWeatherGson(String APIKey,String city) {
         OkHttpClient client = new OkHttpClient();
         Response response = null;
         JsonObject jsonObject = null;
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse("https://api.openweathermap.org/data/2.5/weather?").newBuilder();
         urlBuilder.addQueryParameter("appid",APIKey);
-        urlBuilder.addQueryParameter("lat",lat);
-        urlBuilder.addQueryParameter("lon",lon);
+        urlBuilder.addQueryParameter("q",city);
+
         String url = urlBuilder.build().toString();
 
         Request request = new Request.Builder()

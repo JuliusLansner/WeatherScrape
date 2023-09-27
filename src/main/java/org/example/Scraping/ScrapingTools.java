@@ -1,10 +1,13 @@
 package org.example.Scraping;
 
+import org.example.DTO.WeatherDTO;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -50,4 +53,25 @@ public class ScrapingTools {
         }
         return match;
     }
+
+    public static List<WeatherDTO> DTOMaker(){
+        List<WeatherDTO> DTOs = new ArrayList<>();
+
+        Temp temp = new Temp();
+        Description description = new Description();
+        Location location = new Location();
+        Date date = new Date();
+
+        for (int i = 0; i < date.dateList().size(); i++) {
+            List<String> tempatures = temp.tempList();
+            List<String> descriptions = description.descList();
+            String locatione = location.locationList();
+            List<String> dates = date.dateList();
+            WeatherDTO weatherDTO = new WeatherDTO(dates.get(i),locatione,descriptions.get(i), tempatures.get(i));
+            System.out.println(weatherDTO);
+            DTOs.add(weatherDTO);
+        }
+        return  DTOs;
+    }
+
 }

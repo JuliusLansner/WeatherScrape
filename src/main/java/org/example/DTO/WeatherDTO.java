@@ -14,26 +14,18 @@ import lombok.ToString;
 @Setter
 
 public class WeatherDTO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     String date;
     String location;
-    String lowTemp;
-    String highTemp;
     String description;
     String temp;
-    int humidity;
-    double windSpeed;
 
-    public WeatherDTO(String date, String location, String lowTemp, String highTemp, String description, String temp, int humidity, double windSpeed) {
+
+    public WeatherDTO(String date, String location, String description, String temp) {
         this.date = date;
         this.location = location;
-        this.lowTemp = lowTemp;
-        this.highTemp = highTemp;
         this.description = description;
         this.temp = temp;
-        this.humidity = humidity;
-        this.windSpeed = windSpeed;
+
     }
 }
