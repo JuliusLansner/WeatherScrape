@@ -3,6 +3,7 @@ package org.example.config;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.NoArgsConstructor;
 
+import org.example.DAO.DailyWeatherEntity;
 import org.example.DAO.WeatherEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -57,6 +58,7 @@ public class HibernateConfig {
 
     private static void getAnnotationConfiguration(Configuration configuration) {
         configuration.addAnnotatedClass(WeatherEntity.class);
+        configuration.addAnnotatedClass(DailyWeatherEntity.class);
     }
 
     public static EntityManagerFactory getEntityManagerFactoryConfig() {
