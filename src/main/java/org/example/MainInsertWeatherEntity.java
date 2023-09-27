@@ -6,17 +6,15 @@ import jakarta.persistence.EntityManagerFactory;
 import org.example.DAO.WeatherEntity;
 import org.example.DTO.WeatherDTO;
 import org.example.Scraping.*;
-import org.example.api.WeatherAPIM;
 import org.example.config.HibernateConfig;
-import org.jsoup.select.Elements;
 
 import java.util.List;
 
 
-public class Main {
+public class MainInsertWeatherEntity {
     private static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig();
     public static void main(String[] args) {
-        List<WeatherDTO> weatherthings = ScrapingTools.DTOMaker();
+        List<WeatherDTO> weatherthings = ScrapingTools.DTOMakerThread();
 
 
         for (WeatherDTO weatherDTO: weatherthings){

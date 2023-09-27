@@ -32,29 +32,29 @@ public class ScrapingTools {
         }
     }
 
-    public static String wordMatchGroup(String typedPattern,String searchMatch,int group){
+    public static String wordMatchGroup(String typedPattern, String searchMatch, int group) {
         String match = null;
 
         Pattern pattern = Pattern.compile(typedPattern);
         Matcher matcher = pattern.matcher(searchMatch);
-        while(matcher.find()){
+        while (matcher.find()) {
             match = matcher.group(group);
         }
         return match;
     }
 
-    public static String wordMatch(String typedPattern,String searchMatch){
+    public static String wordMatch(String typedPattern, String searchMatch) {
         String match = null;
 
         Pattern pattern = Pattern.compile(typedPattern);
         Matcher matcher = pattern.matcher(searchMatch);
-        while(matcher.find()){
+        while (matcher.find()) {
             match = matcher.group();
         }
         return match;
     }
 
-    public static List<WeatherDTO> DTOMaker(){
+    public static List<WeatherDTO> DTOMaker() {
         List<WeatherDTO> DTOs = new ArrayList<>();
 
         Temp temp = new Temp();
@@ -67,11 +67,54 @@ public class ScrapingTools {
             List<String> descriptions = description.descList();
             String locatione = location.locationList();
             List<String> dates = date.dateList();
-            WeatherDTO weatherDTO = new WeatherDTO(dates.get(i),locatione,descriptions.get(i), tempatures.get(i));
+            WeatherDTO weatherDTO = new WeatherDTO(dates.get(i), locatione, descriptions.get(i), tempatures.get(i));
             System.out.println(weatherDTO);
             DTOs.add(weatherDTO);
         }
-        return  DTOs;
+        return DTOs;
+    }
+
+    public static List<WeatherDTO> DTOMakerThread() {
+        List<WeatherDTO> DTOs = new ArrayList<>();
+
+        Temp temp = new Temp();
+        Description description = new Description();
+        Location location = new Location();
+        Date date = new Date();
+
+        List<String> tempatures = new ArrayList<>();
+        Thread thread1 = new Thread(() -> {
+            tempatures.addAll(temp.tempList());
+        });
+
+        List<String> descriptions = new ArrayList<>();
+        Thread thread2 = new Thread(() -> {
+            descriptions.addAll(description.descList());
+        });
+        
+        List<String> dates = new ArrayList<>();
+        Thread thread3 = new Thread(() -> {
+            dates.addAll(date.dateList());
+        });
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+            thread3.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < dates.size(); i++) {
+            String locatione = location.locationList();
+            WeatherDTO weatherDTO = new WeatherDTO(dates.get(i), locatione, descriptions.get(i), tempatures.get(i));
+            System.out.println(weatherDTO);
+            DTOs.add(weatherDTO);
+        }
+        return DTOs;
     }
 
 }
