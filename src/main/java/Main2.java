@@ -10,16 +10,7 @@ import org.example.api.WeatherAPIM;
 import org.example.config.HibernateConfig;
 
 import java.util.List;
-
 public class Main2 {
-<<<<<<< Updated upstream
-    private static String APIKey = "77ce734912f5dc35cd073874248b00e5";
-    private static final String API_KEY = "0a3a70bed9265478574e462275fbbf69";
-    public static void main(String[] args) {
-
-       JsonObject jsonObject = WeatherAPIM.getWeatherGson(API_KEY,"Copenhagen");
-        System.out.println(jsonObject);
-=======
     private static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig();
     public static void main(String[] args) {
         List<WeatherDTO> weatherthings = ScrapingTools.DTOMaker();
@@ -36,9 +27,9 @@ public class Main2 {
                 em.getTransaction().begin();
                 em.persist(weatherEntity);
                 em.getTransaction().commit();
+                break;
             }
         }
->>>>>>> Stashed changes
 
 
     }
