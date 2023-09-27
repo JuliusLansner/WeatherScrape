@@ -22,12 +22,18 @@ public class WeatherDTO {
     String lowTemp;
     String highTemp;
     String description;
+    String temp;
+    int humidity;
+    double windSpeed;
 
-    public WeatherDTO(String date, String location, String lowTemp, String highTemp, String description) {
+    public WeatherDTO(String date, String location, String lowTemp, String highTemp, String description, String temp, int humidity, double windSpeed) {
         this.date = date;
         this.location = location;
         this.lowTemp = lowTemp;
         this.highTemp = highTemp;
         this.description = description;
+        this.temp = temp;
+        this.humidity = humidity;
+        this.windSpeed = windSpeed;
     }
 }

@@ -8,8 +8,8 @@ import org.json.JSONObject;
 
 public class WeatherApiClient {
     private static final String API_KEY = "0a3a70bed9265478574e462275fbbf69";
- // -> testing
-    /*public static void main(String[] args) {
+  //-> testing
+    public static void main(String[] args) {
         String city = "Hillerød";
         try {
             String weatherData = getWeatherData(city);
@@ -17,7 +17,7 @@ public class WeatherApiClient {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public static String getWeatherData(String city) throws Exception {
         // Create a URL for the API request
@@ -41,7 +41,7 @@ public class WeatherApiClient {
         // Close the connection
         connection.disconnect();
         //SOUTing the full response, so we can inspect what we'd wanna see when we format the data
-        System.out.println(response.toString());
+        //System.out.println(response.toString());
         // Parse the JSON response so we can return the response as a parameter in another function.
         JSONObject jsonResponse = new JSONObject(response.toString());
 
