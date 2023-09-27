@@ -3,7 +3,7 @@ package org.example.DAO;
 import java.util.List;
 
 public interface IWeather {
-    List<WeatherEntity> getAll();
+    List<DailyWeatherEntity> getAll();
     String getTomorrow();
     WeatherEntity getToday();
 

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class getTomorrow implements IWeather{
     @Override
-    public List<WeatherEntity> getAll() {
+    public List<DailyWeatherEntity> getAll() {
         return null;
     }
 
