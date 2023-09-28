@@ -10,6 +10,13 @@ import okhttp3.Response;
 import java.io.IOException;
 
 public class WeatherAPIM {
+
+    /**
+     * Uses API from openweathermap to get data about the weather on current date.
+     * @param APIKey API key to access the function
+     * @param city City to get weather data from
+     * @return A JsonObject with data of current weather.
+     */
     public static JsonObject getWeatherGson(String APIKey,String city) {
         OkHttpClient client = new OkHttpClient();
         Response response = null;

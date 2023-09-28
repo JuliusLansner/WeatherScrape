@@ -16,9 +16,6 @@ class ScrapingToolsTest {
     }
 
 
-    @Test
-    void DTOMaker() {
-     
-    }
+
 
 }
