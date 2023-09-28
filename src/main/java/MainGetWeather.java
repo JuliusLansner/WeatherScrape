@@ -1,5 +1,3 @@
-import org.example.DAO.GetToday;
-import org.example.DAO.GetTomorrow;
 import org.example.DAO.GetWeather;
 import org.example.DAO.WeatherEntity;
 
