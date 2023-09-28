@@ -3,11 +3,10 @@ package org.example;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import org.example.DAO.WeatherEntity;
+import org.example.Entities.WeatherEntity;
 import org.example.DTO.WeatherDTO;
 import org.example.Scraping.*;
 import org.example.config.HibernateConfig;
-import org.example.config.HibernateConfigTest;
 
 import java.util.List;
 

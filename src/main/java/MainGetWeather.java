@@ -1,5 +1,5 @@
 import org.example.DAO.GetWeather;
-import org.example.DAO.WeatherEntity;
+import org.example.Entities.WeatherEntity;
 
 public class MainGetWeather {
     public static void main(String[] args) {

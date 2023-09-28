@@ -3,8 +3,8 @@ package org.example.config;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.NoArgsConstructor;
 
-import org.example.DAO.DailyWeatherEntity;
-import org.example.DAO.WeatherEntity;
+import org.example.Entities.DailyWeatherEntity;
+import org.example.Entities.WeatherEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

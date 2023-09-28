@@ -2,6 +2,7 @@ package org.example.DAO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import org.example.Entities.WeatherEntity;
 import org.example.config.HibernateConfig;
 
 import java.time.LocalDate;

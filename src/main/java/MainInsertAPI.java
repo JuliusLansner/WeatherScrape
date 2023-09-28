@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import org.example.DAO.DailyWeatherEntity;
+import org.example.Entities.DailyWeatherEntity;
 import org.example.DTO.WeatherDTO;
 import org.example.Scraping.ScrapingTools;
 import org.example.api.WeatherAPIM;

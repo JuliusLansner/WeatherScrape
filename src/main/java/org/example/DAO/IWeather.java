@@ -1,5 +1,7 @@
 package org.example.DAO;
 
+import org.example.Entities.WeatherEntity;
+
 import java.util.List;
 
 public interface IWeather {
