@@ -9,7 +9,7 @@ public class getAll implements IWeather{
     }
 
     @Override
-    public String getTomorrow() {
+    public WeatherEntity getTomorrow() {
         return null;
     }
 

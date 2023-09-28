@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IWeather {
     List<WeatherEntity> getAll();
-    String getTomorrow();
+    WeatherEntity getTomorrow();
     WeatherEntity getToday();
 
 }
