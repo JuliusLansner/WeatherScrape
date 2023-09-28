@@ -7,6 +7,7 @@ import org.example.DAO.WeatherEntity;
 import org.example.DTO.WeatherDTO;
 import org.example.Scraping.*;
 import org.example.config.HibernateConfig;
+import org.example.config.HibernateConfigTest;
 
 import java.util.List;
 

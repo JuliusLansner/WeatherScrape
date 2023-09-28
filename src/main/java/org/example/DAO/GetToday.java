@@ -33,4 +33,6 @@ public class GetToday implements IWeather{
             return weatherEntity;
         }
     }
+
+
 }
