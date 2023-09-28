@@ -26,7 +26,7 @@ public class GetWeather implements IWeather {
 
     /**
      *
-     * @return returns a WeatherEntity object, which is made of data selected from our database.
+     * @return returns a WeatherEntity object with the weather data of tomorrow, which is made of data selected from our database.
      */
     @Override
     public WeatherEntity getTomorrow() {
