@@ -1,6 +1,3 @@
-package org.example;
-
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.example.Entities.WeatherEntity;

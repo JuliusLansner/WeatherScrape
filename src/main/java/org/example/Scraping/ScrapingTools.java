@@ -14,6 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ScrapingTools {
+
     private static Document makeDocument(String url) {
         try {
             return Jsoup.connect(url).get();
@@ -34,27 +35,6 @@ public class ScrapingTools {
         }
     }
 
-    public static String wordMatchGroup(String typedPattern, String searchMatch, int group) {
-        String match = null;
-
-        Pattern pattern = Pattern.compile(typedPattern);
-        Matcher matcher = pattern.matcher(searchMatch);
-        while (matcher.find()) {
-            match = matcher.group(group);
-        }
-        return match;
-    }
-
-    public static String wordMatch(String typedPattern, String searchMatch) {
-        String match = null;
-
-        Pattern pattern = Pattern.compile(typedPattern);
-        Matcher matcher = pattern.matcher(searchMatch);
-        while (matcher.find()) {
-            match = matcher.group();
-        }
-        return match;
-    }
 
     public static List<WeatherDTO> DTOMaker() {
         List<WeatherDTO> DTOs = new ArrayList<>();
