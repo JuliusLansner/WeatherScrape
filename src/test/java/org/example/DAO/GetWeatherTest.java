@@ -46,17 +46,15 @@ class GetWeatherTest {
 
     @Test
     void getTomorrow() {
-    getWeather = new GetWeather();
-    WeatherEntity weatherEntity = getWeather.getTomorrow();
-    assertEquals(1,weatherEntity.getId());
-
+        getWeather = new GetWeather();
+        WeatherEntity weatherEntity = getWeather.getTomorrow();
+        assertEquals(1, weatherEntity.getId());
     }
 
     @Test
     void getToday() {
         getWeather = new GetWeather();
         WeatherEntity weatherEntity = getWeather.getToday();
-
         assertEquals(2, weatherEntity.getId());
     }
 }
