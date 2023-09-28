@@ -2,6 +2,8 @@ package org.example.DAO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
+import org.example.Entities.DailyWeatherEntity;
 import org.example.Entities.WeatherEntity;
 import org.example.config.HibernateConfig;
 
@@ -18,10 +20,18 @@ public class GetWeather implements IWeather {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d");
     LocalDate today = LocalDate.now();
 
-
+    /**
+     * The getAll method seeks to get all DailyWeatherEntities from the database.
+     * @return A list of DailyWeatherEntities
+     */
     @Override
-    public List<WeatherEntity> getAll() {
-        return null;
+    public List<DailyWeatherEntity> getAll() {
+        // Use of Java try-with-resources
+        try (EntityManager em = emf.createEntityManager()) {
+            TypedQuery<DailyWeatherEntity> query = em.createQuery("SELECT d FROM DailyWeatherEntity d", DailyWeatherEntity.class);
+            List<DailyWeatherEntity> resultList = query.getResultList();
+            return resultList;
+        }
     }
 
 

@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
+import org.example.Entities.DailyWeatherEntity;
 import org.example.config.HibernateConfig;
 import org.junit.After;
 import org.junit.Before;
@@ -25,7 +26,7 @@ class getAllTest {
     void setUp() {
         emf = HibernateConfig.getEntityManagerFactoryConfig();
         em = emf.createEntityManager();
-        iWeather = new getAll();
+        iWeather = new GetWeather();
         addTestData();
     }
 
