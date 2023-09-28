@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GetTodayTest {
     private EntityManagerFactory emf;
@@ -44,7 +45,8 @@ class GetTodayTest {
     @Test
     void getToday() {
         getWeather = new GetWeather();
+        WeatherEntity weatherEntity = getWeather.getToday();
 
-        System.out.println(getWeather.getToday());
+        assertEquals(2,weatherEntity.getId());
     }
 }
