@@ -8,7 +8,7 @@ import org.example.api.WeatherAPIM;
 import org.example.config.HibernateConfig;
 
 import java.util.List;
-public class MainAPI {
+public class MainInsertAPI {
     private static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig();
     public static void main(String[] args) {
         List<WeatherDTO> weatherthings = ScrapingTools.DTOMaker();
