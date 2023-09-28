@@ -8,15 +8,11 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class ScrapingTools {
 
     /**
-     *
      * @param url Url for website
      * @return A HTML document representet as a Document object
      */
@@ -32,8 +28,7 @@ public class ScrapingTools {
     }
 
     /**
-     *
-     * @param url Website to scrape from
+     * @param url         Website to scrape from
      * @param cssSelector CssSelector for scraping the website
      * @return Elements from the site in object of Elements
      */
@@ -51,6 +46,7 @@ public class ScrapingTools {
      * Uses classes Temp, Description, Location and Date, and their functions tempList, descList,
      * locationList, dateList which each returns a list of tempatures, descriptions of weather, location of weather, date of weather
      * And from these lists, create weather DTO's which each represents the data of weather on a certain day.
+     *
      * @return A list of DTO WeatherDTO objects
      */
     public static List<WeatherDTO> DTOMaker() {
@@ -73,12 +69,14 @@ public class ScrapingTools {
         }
         return DTOs;
     }
+
     /**
      * Same function as DTOMaker, but uses threads to speed the execution time up.
-     *
+     * <p>
      * Uses classes Temp, Description, Location and Date, and their functions tempList, descList,
      * locationList, dateList which each returns a list of tempatures, descriptions of weather, location of weather, date of weather
      * And from these lists, create weather DTO's which each represents the data of weather on a certain day.
+     *
      * @return A list of DTO WeatherDTO objects
      */
     public static List<WeatherDTO> DTOMakerThread() {

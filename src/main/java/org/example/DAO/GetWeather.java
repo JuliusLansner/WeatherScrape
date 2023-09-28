@@ -22,6 +22,7 @@ public class GetWeather implements IWeather {
 
     /**
      * The getAll method seeks to get all DailyWeatherEntities from the database.
+     *
      * @return A list of DailyWeatherEntities
      */
     @Override
@@ -36,16 +37,15 @@ public class GetWeather implements IWeather {
 
 
     /**
-     *
      * @return returns a WeatherEntity object with the weather data of tomorrow, which is made of data selected from our database.
      */
     @Override
     public WeatherEntity getTomorrow() {
         LocalDate tomorrow = today.plusDays(1);
         String dateFormatted = tomorrow.format(formatter);
-        try(EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             WeatherEntity tm = em.createQuery("SELECT w FROM WeatherEntity w WHERE date =:date", WeatherEntity.class)
-                    .setParameter("date",dateFormatted)
+                    .setParameter("date", dateFormatted)
                     .getSingleResult();
             return tm;
         }
@@ -57,7 +57,7 @@ public class GetWeather implements IWeather {
         try (EntityManager em = emf.createEntityManager()) {
             String formattedDate = today.format(formatter); // Format the LocalDate
             WeatherEntity weatherEntity = em.createQuery("SELECT w FROM WeatherEntity w WHERE date =:date", WeatherEntity.class)
-                    .setParameter("date",formattedDate)
+                    .setParameter("date", formattedDate)
                     .getSingleResult();
 
             return weatherEntity;

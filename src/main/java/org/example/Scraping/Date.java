@@ -9,6 +9,7 @@ public class Date implements IDate {
 
     /**
      * Scrapes dates from accuweather and puts into a list.
+     *
      * @return list of strings each representing a date in the format M/D
      */
     @Override

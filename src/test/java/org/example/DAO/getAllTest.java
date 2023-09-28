@@ -45,6 +45,7 @@ class getAllTest {
         List<DailyWeatherEntity> list = iWeather.getAll();
         assertNotNull(list);
         assertFalse(list.isEmpty());
+        assertTrue(list.stream().anyMatch(entity -> "TestData".equals(entity.getDescription())));
     }
 
     /**

@@ -12,6 +12,5 @@ public class MainGetWeather {
         System.out.println(tomorrow);
 
 
-
     }
 }

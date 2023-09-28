@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface IWeather {
     List<DailyWeatherEntity> getAll();
+
     WeatherEntity getTomorrow();
+
     WeatherEntity getToday();
 
 }

@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import org.json.JSONObject;
 
 public class WeatherApiClient {
     private static final String API_KEY = "0a3a70bed9265478574e462275fbbf69";
-  //-> testing
+
+    //-> testing
     public static void main(String[] args) {
         String city = "Hillerød";
         try {
@@ -48,6 +50,7 @@ public class WeatherApiClient {
         // Format and return the weather data
         return formatWeatherData(jsonResponse);
     }
+
     // this method takes a JSONObject, that represents the parsed data from getWeatherData
     //it extracts and formats weather information.
     public static String formatWeatherData(JSONObject jsonResponse) {
@@ -73,7 +76,6 @@ public class WeatherApiClient {
         int sunset = sys.getInt("sunset");
 
 
-
         StringBuilder formattedData = new StringBuilder();
         formattedData.append("Weather Data for ").append(cityName).append(":\n");
         formattedData.append("Temperature: ").append(c).append("°C\n");
@@ -83,7 +85,6 @@ public class WeatherApiClient {
         formattedData.append("Wind Speed: ").append(windspeed).append("m/s\n");
         formattedData.append("Clouds: ").append(cloud).append("\n");
         formattedData.append("Sunset: ").append(sunset).append("\n");
-
 
 
         return formattedData.toString();
