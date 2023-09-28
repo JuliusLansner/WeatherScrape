@@ -13,6 +13,9 @@ import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * A class with some basic tools for webscraping to get rid of some boilerplate code.
+ */
 public class ScrapingTools {
 
     /**
