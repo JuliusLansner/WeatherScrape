@@ -1,16 +1,14 @@
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.example.DAO.DailyWeatherEntity;
-import org.example.DAO.WeatherEntity;
 import org.example.DTO.WeatherDTO;
 import org.example.Scraping.ScrapingTools;
 import org.example.api.WeatherAPIM;
 import org.example.config.HibernateConfig;
 
 import java.util.List;
-public class Main2 {
+public class MainAPI {
     private static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig();
     public static void main(String[] args) {
         List<WeatherDTO> weatherthings = ScrapingTools.DTOMaker();
